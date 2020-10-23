@@ -2,13 +2,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  stories: ['../src/components/**/*.stories.js'],
-  add: ['@storybook/addon-knobs/register'],
+  stories: ['../src/components/**/*.stories.[tj]s'],
+  addons: ['@storybook/addon-knobs/register'],
   webpackFinal: async (config, { configType }) => {
     config.plugins.push(
       new MiniCssExtractPlugin({
-        filename: '[name.css]',
-        chunkFilename: '[id.css]',
+        filename: '[name].css',
+        chunkFilename: '[id].css',
         ignoreOrder: false,
       })
     );
@@ -35,7 +35,7 @@ module.exports = {
           options: {
             sourceMap: 'inline',
             config: {
-              path: path.resolve(__dirname, './config.postcss.js'),
+              path: path.resolve(__dirname, './config/postcss.config.js'),
             },
           },
         },
