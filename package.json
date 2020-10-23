@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint --fix .",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "start-storybook -s ./src"
   },
   "author": "",
   "license": "ISC",
